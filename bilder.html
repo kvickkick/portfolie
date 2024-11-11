@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <link rel="icon" href="bilder/Trojan horse war room tate.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russisk Nettside</title>
+    <link rel="stylesheet" href="css/css.css">
+    <style>
+        /* Basic body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Tinos', serif;
+            background-color: #0A0908;
+            color: #EAE0D5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #C6AC8E;
+            color: #0A0908;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* Navigation styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #2c2927;
+            width: 100%;
+        }
+
+        nav a {
+            padding: 10px;
+            text-decoration: none;
+            border: 2px solid #EAE0D5;
+            margin-right: 10px;
+            color: #EAE0D5;
+        }
+
+        nav a:hover {
+            background-color: #C6AC8E;
+            color: #0A0908;
+        }
+
+        /* Three-dots icon styling */
+        .three-dots {
+            font-size: 24px;
+            color: #EAE0D5;
+            cursor: pointer;
+        }
+
+        /* Login form container styling */
+        .login-form-container {
+            position: relative;
+        }
+
+        /* Dropdown login/register form styling */
+        .login-form,
+        .register-form {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 30px;
+            background-color: #C6AC8E;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .login-form input,
+        .register-form input {
+            display: block;
+            margin: 5px 0;
+            padding: 8px;
+            border: 1px solid #EAE0D5;
+            border-radius: 3px;
+            width: 180px;
+            background-color: #EAE0D5;
+            color: #0A0908;
+        }
+
+        .login-form button,
+        .register-form button {
+            padding: 5px 10px;
+            background-color: #EAE0D5;
+            color: #0A0908;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 5px;
+            width: 100%;
+        }
+
+        .login-form button:hover,
+        .register-form button:hover {
+            background-color: #0A0908;
+            color: #EAE0D5;
+        }
+
+        .toggle-link {
+            color: #0A0908;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: underline;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Section styling */
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Image styling */
+        section img {
+            width: 300px;
+            height: auto;
+            margin: 10px;
+            border: 2px solid #C6AC8E;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #C6AC8E;
+            color: #0A0908;
+            padding: 10px;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Dette er en nettside laget av russeren selv</h1>
+    </header>
+
+    <nav>
+        <div>
+            <a href="Hjemside.html">Hjemside</a>
+            <a href="bilder.html">Bilder</a>
+            <a href="Ommeg.html">Om meg</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+        
+        <div class="login-form-container">
+            <span class="three-dots" onclick="toggleLogin()">&#x22EE;</span> <!-- Three vertical dots icon -->
+            <div class="login-form" id="loginForm">
+                <input type="text" id="username" placeholder="Brukernavn" required>
+                <input type="password" id="password" placeholder="Passord" required>
+                <button onclick="logIn()">Logg inn</button>
+                <span class="toggle-link" onclick="toggleForm()">Eller registrer</span>
+            </div>
+            <div class="register-form" id="registerForm">
+                <input type="text" id="newUsername" placeholder="Brukernavn" required>
+                <input type="password" id="newPassword" placeholder="Passord" required>
+                <button onclick="register()">Registrer</button>
+                <span class="toggle-link" onclick="toggleForm()">Tilbake til logg inn</span>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <img src="bilder/IMG_0017.JPG" alt="Dette bilde er av Thomas, han er norsk">
+        <img src="bilder/Sameh21.10.2024.jpg" alt="Dette bilde er av Sameh, han er russisk">
+    </section>
+
+    <footer>
+        Dette er et bilde av Thomas og meg. Han er to kromosomer unna en norsk potet, og jeg er en større potet.
+        Laget av Russeren - 2024
+    </footer>
+
+    <script>
+        function toggleLogin() {
+            document.getElementById("loginForm").classList.toggle("show");
+            document.getElementById("registerForm").style.display = "none"; // Hide register form by default
+        }
+
+        function toggleForm() {
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                registerForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            }
+        }
+
+        function register() {
+            const username = document.getElementById('newUsername').value;
+            const password = document.getElementById('newPassword').value;
+            if (localStorage.getItem(username)) {
+                alert('Bruker allerede registrert. Vennligst velg et annet brukernavn.');
+            } else {
+                localStorage.setItem(username, password);
+                alert('Registrering vellykket!');
+                toggleForm(); // Switch back to login form
+            }
+        }
+
+        function logIn() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (localStorage.getItem(username) === password) {
+                alert('Innlogging vellykket!');
+                location.href = 'Hjemside.html';
+            } else {
+                alert('Ugyldig brukernavn eller passord.');
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

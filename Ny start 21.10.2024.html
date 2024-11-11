@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+ 
+<html>
+ 
+<head>
+    <link rel="stylesheet" href="css/css.css">  
+ 
+<title>Tekst</title>
+ 
+<body>
+   
+<header>
+ 
+    <h1>Min Portifolio</h1>
+ 
+<header>
+ 
+<nav>
+ 
+    <a href="bilder.html">Pictures</a>
+    <a href="#">About me</a>
+    <a href="#">Contact me</a>
+    </a>
+ 
+ 
+ 
+<nav>
+ 
+ 
+ 
+<section>
+ 
+    <h2>Log In</h2>
+ 
+    <p>log in for å vite mer om meg</p>
+    <form>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <span id="usernameError" style="color:red;display:none;">Invalid</span><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <span id="passwordError" style="color:red;display:none;">Invalid</span><br>
+        <input type="submit" value="Log in">
+    </form>
+    <script>
+        document.querySelector('form').addEventListener('submit', e => {
+            e.preventDefault();
+            const username = document.querySelector('#username').value;
+            const password = document.querySelector('#password').value;
+            const usernameError = document.querySelector('#usernameError');
+            const passwordError = document.querySelector('#passwordError');
+ 
+            if (!username) {
+                usernameError.style.display = 'block';
+            } else {
+                usernameError.style.display = 'none';
+            }
+ 
+            if (!password) {
+                passwordError.style.display = 'block';
+            } else {
+                passwordError.style.display = 'none';
+            }
+ 
+            if (username && password) {
+                console.log(`Username: ${username}, Password: ${password}`);
+                location.href = 'scammed.html';
+            }
+        });
+    </script>
+ 
+ 
+</section>
+ 
+    <footer>
+        Made by Haw - 2024
+    </footer>
+ 
+ 
+ 
+ 
+ 
+ 
+    </html>

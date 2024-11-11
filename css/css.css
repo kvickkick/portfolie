@@ -1,0 +1,63 @@
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+}
+
+header{
+
+background-color: #333;
+color: #fff;
+padding: 10px;
+text-align: center;
+
+}
+
+/* Login form styling */
+.login-form-container {
+    position: relative;
+}
+
+.login-form {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 35px; /* Adjusted position relative to button */
+    right: 20px; /* Adds breathing room from the right side */
+    background-color: #EAE0D5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+nav{
+
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+
+nav a{
+
+    color:  #fff;
+    text-decoration: none;
+}
+
+section{
+    padding: 50px;
+    text-align: center;
+
+}
+
+footer{
+
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}

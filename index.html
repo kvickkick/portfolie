@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <link rel="icon" href="bilder/Trojan horse war room tate.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russisk Nettside</title>
+    <link rel="stylesheet" href="css/css.css">
+    <style>
+        /* Basic body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            background-color: #0A0908;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #C6AC8E;
+            color: #0A0908;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Navigation styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #0A0908;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+        }
+
+        nav a {
+            color: #EAE0D5;
+            text-decoration: none;
+            padding: 10px;
+            border: 2px solid #EAE0D5;
+            margin-right: 10px;
+        }
+
+        nav a:hover {
+            background-color: #C6AC8E;
+        }
+
+        /* Login section styling */
+        .login-section {
+            border: 2px solid #C6AC8E;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #0A0908;
+            color: #EAE0D5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .login-section input {
+            padding: 10px;
+            width: 200px;
+            border-radius: 3px;
+            border: 1px solid #C6AC8E;
+            margin-bottom: 10px;
+            background-color: #EAE0D5;
+            color: #0A0908;
+        }
+
+        .login-section button {
+            padding: 10px 20px;
+            border-radius: 3px;
+            border: none;
+            background-color: #C6AC8E;
+            color: #0A0908;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .login-section button:hover {
+            background-color: #EAE0D5;
+            color: #0A0908;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Dette er toppen av sida mi -->
+    <header>
+        <h1>Dette er en nettside laget av russeren selv</h1>
+    </header>
+
+    
+
+    <div class="login-section">
+        <h2>Logg inn / Registrer deg</h2>
+        <p>Logg inn for å åpne nettsiden</p>
+        <form onsubmit="return false;" style="display: flex; flex-direction: column; align-items: center;">
+            <input type="text" id="username" name="username" placeholder="Brukernavn" required>
+            <input type="password" id="password" name="password" placeholder="Passord" required>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <button type="button" onclick="saveCredentials()">Registrer deg</button>
+                <button type="button" onclick="logIn()">Logg inn</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function saveCredentials() {
+            const username = document.querySelector('#username').value;
+            const password = document.querySelector('#password').value;
+            if (localStorage.getItem(username)) {
+                alert('Bruker allerede registrert. Vennligst velg et annet brukernavn.');
+            } else {
+                localStorage.setItem(username, password);
+                console.log(`Ny bruker: Brukernavn - ${username}, Passord - ${password}`);
+                alert('Registrering vellykket!');
+                location.href = 'kontakt.html';
+            }
+        }
+
+        function logIn() {
+            const username = document.querySelector('#username').value;
+            const password = document.querySelector('#password').value;
+            if (localStorage.getItem(username) === password) {
+                alert('Innlogging vellykket!');
+                location.href = 'Hjemside.html';
+            } else {
+                alert('Ugyldig brukernavn eller passord.');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
